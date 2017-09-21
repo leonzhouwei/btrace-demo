@@ -29,4 +29,5 @@ var/log
 .sonar/
 .scannerwork
 infer-out/
+*.log
 
