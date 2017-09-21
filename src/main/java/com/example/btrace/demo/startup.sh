@@ -6,6 +6,7 @@ BasePath=$(cd `dirname $0`; pwd)
 BTraceCmd=btrace
 TargetClassName="AdminControllerBootstrap"
 BTraceClassName="AdminControllerBTrace"
+Output="out.log"
 
 ################################################################################
 cd ${BasePath}
@@ -18,7 +19,7 @@ echo "btrace class name: ${BTraceClassName}"
 pid=$(jps | grep ${TargetClassName} | awk '{print $1}')
 echo "target process id is ${pid}"
 
-${BTraceCmd} ${pid} ${BTraceClassName}.java
+${BTraceCmd} ${pid} ${BTraceClassName}.java > ${Output}
 
 ################################################################################
 exit 0
